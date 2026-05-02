@@ -384,13 +384,12 @@
       }
 
       .page-content {
-        position: relative;
-        visibility: hidden;
-        opacity: 0;
-        display: flex;
+        display: none;
       }
 
       .page-content.active {
+        display: flex;
+        flex-direction: column;
         visibility: visible;
         opacity: 1;
       }
