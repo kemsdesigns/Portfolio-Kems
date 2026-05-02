@@ -335,6 +335,10 @@
         border-right: none;
       }
 
+      nav {
+        margin-bottom: 1.5rem; /* was 5rem — this was the main culprit */
+      }
+
       .right {
         height: auto;
         padding: 1.5rem;
@@ -367,9 +371,13 @@
         position: relative;
         bottom: auto;
         left: auto;
-        margin-top: 0;
-        margin-bottom: 20px;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
         display: inline-flex;
+      }
+
+      .content-wrapper {
+        overflow-y: visible;
       }
 
       .page-content {
