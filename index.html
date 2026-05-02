@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>🌸 Kems Designs</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+<link rel="icon" type="image/x-icon" href="favicon.ico?v=3">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root {
@@ -88,15 +88,18 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  display: none;
+  display: flex;
   flex-direction: column;
   opacity: 0;
-  transition: opacity 0.4s;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+  pointer-events: none;
 }
 .page-content.active {
-  display: flex;
   opacity: 1;
+  visibility: visible;
   position: relative;
+  pointer-events: auto;
 }
 
 .headline {
