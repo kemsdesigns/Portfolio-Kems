@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CopyLint | Kems Designs</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=6" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/case-studies/events-os/events-detail.css?v=21"
+    />
+  </head>
+  <body class="copylint-case events-case">
+    <aside class="left">
+      <nav>
+        <a class="logo" href="/">🌸</a
+        ><a class="nav-link active" href="/case-studies/">Case Studies</a
+        ><a class="nav-link" href="/about.html">About</a>
+      </nav>
+      <section class="overview">
+        <p class="eyebrow">Figma plugin · 2026</p>
+        <h1>CopyLint</h1>
+        <p class="overview-summary">
+          A Figma plugin that catches unclear, inconsistent, and unreviewed copy
+          before handoff.
+        </p>
+        <dl class="project-facts">
+          <div>
+            <dt>Role</dt>
+            <dd>Designer and Builder</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>Preact, TypeScript, Groq</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>Working plugin</dd>
+          </div>
+        </dl>
+      </section>
+      <button
+        class="theme-switcher"
+        data-theme-toggle
+        aria-label="Toggle theme"
+      >
+        <svg class="moon-icon" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg
+        ><svg class="sun-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+          />
+        </svg>
+      </button>
+    </aside>
+    <main class="right">
+      <article class="case-story">
+        <figure class="hero-media">
+          <img
+            data-src="/public/case-studies/copylint/actual/found-issues.jpg"
+            alt="CopyLint grouped issue results"
+          />
+        </figure>
+        <section class="story-section">
+          <p class="story-label">Project snapshot</p>
+          <h2>A linter for copy, built where designers already work.</h2>
+          <p>
+            CopyLint is a Figma plugin that catches unclear, inconsistent, and
+            unreviewed copy before a file reaches handoff. I designed and built
+            the plugin solo, from the scan flow and result states to the model
+            integration and Figma plugin architecture.
+          </p>
+          <div class="snapshot-grid">
+            <span>Solo-designed and built</span
+            ><span>Preact and TypeScript architecture</span
+            ><span>Complete scan and recovery states</span>
+          </div>
+        </section>
+        <section class="story-section">
+          <p class="story-label">The reality</p>
+          <h2>Copy was the one thing nobody was systematically checking.</h2>
+          <p>
+            Design systems catch inconsistencies in color, spacing, and
+            components almost automatically now. Copy never got the same
+            treatment. It gets written fast, under deadline pressure, by whoever
+            is building the screen that day, and slips through review because no
+            single person owns consistency in the same way a design lead owns
+            visual language.
+          </p>
+          <p>
+            At Gopaddi this showed up constantly. One modal said “Delete.”
+            Another said “Remove.” A confirmation button said “Yes” in one flow
+            and “Confirm” in another. None of it was wrong exactly. All of it
+            was inconsistent, and catching it meant manually rereading every
+            string in a file.
+          </p>
+          <p class="callout">
+            I was that someone. CopyLint started as a way to stop being that
+            someone.
+          </p>
+        </section>
+        <section class="story-section">
+          <p class="story-label">The design challenge</p>
+          <h2>Give feedback at the speed designers actually work.</h2>
+          <p>
+            The tool had to work inside the file designers already had open,
+            without creating a separate review step someone had to remember to
+            run.
+          </p>
+        </section>
+        <section class="product-showcase">
+          <header class="story-section">
+            <p class="story-label">The product flow</p>
+            <h2>One short loop from setup to a decision.</h2>
+            <p>
+              Each state answers one question clearly: is the tool ready, is the
+              scan running, what did it find, and what should the designer do
+              next?
+            </p>
+          </header>
+          <article class="flow-group">
+            <div class="flow-intro">
+              <span>01</span>
+              <div>
+                <h3>Early onboarding</h3>
+                <p>
+                  An early API-key setup iteration made the tool usable without
+                  a separate account flow.
+                </p>
+              </div>
+            </div>
+            <div class="mockup-grid">
+              <figure class="product-frame plugin-frame">
+                <div class="window-bar"><i></i><i></i><i></i></div>
+                <img
+                  data-src="/public/case-studies/copylint/actual/onboarding-empty.jpg"
+                  alt="CopyLint API key onboarding empty state"
+                />
+              </figure>
+              <figure class="product-frame plugin-frame">
+                <div class="window-bar"><i></i><i></i><i></i></div>
+                <img
+                  data-src="/public/case-studies/copylint/actual/onboarding-key.jpg"
+                  alt="CopyLint API key onboarding complete state"
+                />
+              </figure>
+            </div>
+          </article>
+          <article class="flow-group">
+            <div class="flow-intro">
+              <span>02</span>
+              <div>
+                <h3>Scan and respond</h3>
+                <p>
+                  Ready, progress, success, and failure states keep the designer
+                  oriented through a fast scan.
+                </p>
+              </div>
+            </div>
+            <div class="mockup-grid">
+              <figure class="product-frame plugin-frame">
+                <div class="window-bar"><i></i><i></i><i></i></div>
+                <img
+                  data-src="/public/case-studies/copylint/actual/scan-ready.jpg"
+                  alt="CopyLint ready to scan"
+                />
+              </figure>
+              <figure class="product-frame plugin-frame">
+                <div class="window-bar"><i></i><i></i><i></i></div>
+                <img
+                  data-src="/public/case-studies/copylint/actual/scanning.jpg"
+                  alt="CopyLint scanning progress"
+                />
+              </figure>
+              <figure class="product-frame plugin-frame">
+                <div class="window-bar"><i></i><i></i><i></i></div>
+                <img
+                  data-src="/public/case-studies/copylint/actual/no-issues.jpg"
+                  alt="CopyLint no issues result"
+                />
+              </figure>
+              <figure class="product-frame plugin-frame">
+                <div class="window-bar"><i></i><i></i><i></i></div>
+                <img
+                  data-src="/public/case-studies/copylint/actual/error-state.jpg"
+                  alt="CopyLint connection error"
+                />
+              </figure>
+            </div>
+          </article>
+          <article class="flow-group">
+            <div class="flow-intro">
+              <span>03</span>
+              <div>
+                <h3>Keep control in settings</h3>
+                <p>
+                  Key storage and update states make the integration
+                  understandable without interrupting the scan flow.
+                </p>
+              </div>
+            </div>
+            <div class="mockup-grid">
+              <figure class="product-frame plugin-frame">
+                <div class="window-bar"><i></i><i></i><i></i></div>
+                <img
+                  data-src="/public/case-studies/copylint/actual/settings.jpg"
+                  alt="CopyLint settings page"
+                />
+              </figure>
+              <figure class="product-frame plugin-frame">
+                <div class="window-bar"><i></i><i></i><i></i></div>
+                <img
+                  data-src="/public/case-studies/copylint/actual/settings-update.jpg"
+                  alt="CopyLint settings update state"
+                />
+              </figure>
+            </div>
+          </article>
+        </section>
+        <section class="story-section">
+          <p class="story-label">Key decision 01</p>
+          <h2>Speed over depth.</h2>
+          <p>
+            A plugin that takes ten seconds to respond gets closed and never
+            opened again. I used Preact and TypeScript on the
+            @create-figma-plugin framework because Figma plugins run inside a
+            sandboxed iframe with real performance limits, and every extra
+            kilobyte becomes load time a designer feels immediately.
+          </p>
+          <p>
+            For the AI layer, I chose Groq running llama-3.1-8b-instant over a
+            larger model. A bigger model might catch subtler tone issues, but
+            not at the latency and cost profile needed by a free tool scanning
+            dozens of text layers repeatedly. For a linting tool, fast and
+            decent beats slow and excellent.
+          </p>
+          <div class="decision-grid">
+            <article>
+              <h3>Built for the sandbox</h3>
+              <p>
+                A lightweight stack that respects Figma's plugin performance
+                constraints.
+              </p>
+            </article>
+            <article>
+              <h3>Fast inference by design</h3>
+              <p>
+                A smaller model chosen deliberately for speed, not as an
+                accidental compromise.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section class="story-section">
+          <p class="story-label">Key decision 02</p>
+          <h2>Grouped feedback, not a flat list.</h2>
+          <p>
+            Fifteen flagged strings presented as fifteen separate complaints
+            reads as noise. Grouping those strings by inconsistency, clarity,
+            and tone turns them into patterns a designer can act on. Instead of
+            three disconnected flags, the plugin can show that three different
+            words are being used for the same action.
+          </p>
+        </section>
+        <section class="story-section">
+          <p class="story-label">Key decision 03</p>
+          <h2>Suggestion beside issue, never auto-applied.</h2>
+          <p>
+            The flagged text and suggested fix stay visible together so a
+            designer can compare, rewrite, or dismiss with full context. The
+            plugin never silently changes anything. That was a trust decision as
+            much as a UX one: the designer stays in control of the actual
+            decision.
+          </p>
+        </section>
+        <section class="story-section">
+          <p class="story-label">The point</p>
+          <h2>AI should support judgment here, not replace it.</h2>
+          <p>
+            CopyLint's point of view is that the fastest useful tool surfaces
+            the problem clearly and gets out of the way. It does not try to be
+            clever on the designer's behalf.
+          </p>
+        </section>
+        <section class="story-section">
+          <p class="story-label">Reflection</p>
+          <h2>Building beyond the happy path changed the bar.</h2>
+          <p>
+            CopyLint needed more than a successful scan screen. Setup, loading,
+            empty results, API failures, key management, and issue-by-issue
+            review all had to make sense without explanation. Designing those
+            states made it feel like a complete tool rather than an AI demo.
+          </p>
+        </section>
+      </article>
+      <a
+        class="next-project next-preview"
+        href="/case-studies/design-engineering-lab/"
+        ><img
+          src="/public/case-studies/design-engineering-lab/music-player.png"
+          alt="Design engineering lab preview"
+        />
+        <div>
+          <span>Design engineering · Interactive experiments</span
+          ><strong>Design engineering lab</strong>
+          <p>Games, interaction experiments, and coded prototypes.</p>
+        </div></a
+      >
+    </main>
+    <script src="/case-studies/case-study.js?v=11"></script>
+  </body>
+</html>

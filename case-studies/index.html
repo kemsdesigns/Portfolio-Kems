@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Studies | Kems Designs</title>
+    <meta
+      name="description"
+      content="Selected product design and design engineering case studies by Kems Designs."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/favicon.png?v=6" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg-color: #0c0c0c;
+        --text-main: #ffffff;
+        --text-sub: #888888;
+        --pink: #ffbcf2;
+        --grey-btn: #111111;
+        --border: rgba(255, 255, 255, 0.1);
+        --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      body.light {
+        --bg-color: #fcfcfc;
+        --text-main: #000000;
+        --text-sub: #666666;
+        --pink: #ffbcf2;
+        --grey-btn: #fafafa;
+        --border: rgba(0, 0, 0, 0.06);
+      }
+
+      html,
+      body {
+        height: 100%;
+        font-family: "Sora", sans-serif;
+        background: var(--bg-color);
+        color: var(--text-main);
+      }
+      body {
+        display: flex;
+        overflow: hidden;
+        transition:
+          background var(--transition),
+          color var(--transition);
+      }
+
+      .left {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        width: 500px;
+        height: 100vh;
+        flex: 0 0 auto;
+        flex-direction: column;
+        padding: 3rem 4rem;
+        border-right: 1px solid var(--border);
+        background: var(--bg-color);
+        transition:
+          background var(--transition),
+          border-color var(--transition);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 5rem;
+      }
+      .logo {
+        margin-right: auto;
+        color: var(--text-main);
+        font-size: 1.6rem;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        text-decoration: none;
+      }
+      .nav-link {
+        color: var(--text-sub);
+        cursor: pointer;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        opacity: 0.7;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition:
+          color 0.2s,
+          opacity 0.2s;
+        white-space: nowrap;
+      }
+      .nav-link:hover {
+        color: var(--pink);
+        opacity: 1;
+      }
+      .nav-link.active {
+        color: var(--text-main);
+        opacity: 1;
+      }
+
+      .intro {
+        display: flex;
+        max-width: 370px;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 7rem;
+      }
+      .eyebrow {
+        margin-bottom: 1.25rem;
+        color: var(--text-sub);
+        font-size: 0.74rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+      }
+      h1 {
+        font-size: clamp(2.6rem, 3.4vw, 3.6rem);
+        font-weight: 600;
+        letter-spacing: -0.045em;
+        line-height: 1.14;
+      }
+      .intro p {
+        margin-top: 1.35rem;
+        color: var(--text-sub);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.7;
+      }
+      .theme-switcher {
+        position: absolute;
+        bottom: 3rem;
+        left: 4rem;
+        display: grid;
+        width: 34px;
+        height: 34px;
+        flex: 0 0 34px;
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        background: var(--grey-btn);
+        color: var(--text-main);
+        cursor: pointer;
+        font-size: 1rem;
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+      }
+      .theme-switcher:hover {
+        transform: scale(1.08);
+        border-color: var(--border);
+      }
+      .theme-switcher svg {
+        width: 16px;
+        height: 16px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+      }
+      .theme-switcher .sun-icon,
+      body.light .theme-switcher .moon-icon {
+        display: none;
+      }
+      body.light .theme-switcher .sun-icon {
+        display: block;
+      }
+
+      .right {
+        flex: 1;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 3rem;
+        scrollbar-width: none;
+      }
+      .right::-webkit-scrollbar {
+        display: none;
+      }
+      .gallery {
+        display: flex;
+        max-width: 900px;
+        margin: 0 auto;
+        flex-direction: column;
+        gap: 5.5rem;
+        padding-bottom: 4rem;
+      }
+      .project {
+        color: inherit;
+        text-decoration: none;
+      }
+      .project-visual {
+        position: relative;
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        border: 0;
+        border-radius: 12px;
+        background: var(--grey-btn);
+        transition: box-shadow 0.25s;
+      }
+      .project-visual img,
+      .project-visual video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: cover;
+        transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      .project:hover .project-visual {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+      }
+      .project:hover .project-visual img,
+      .project:hover .project-visual video {
+        transform: scale(1.025);
+      }
+      .project-visual img:not([src]),
+      .project-visual img.is-missing {
+        display: none;
+      }
+      .fallback {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background:
+          linear-gradient(140deg, rgba(128, 128, 128, 0.12), transparent 48%),
+          var(--grey-btn);
+        color: var(--text-sub);
+        font-size: 0.82rem;
+      }
+      .project-visual img[src]:not(.is-missing) + .fallback {
+        display: none;
+      }
+      .project-info {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 2rem;
+        padding-top: 1.5rem;
+      }
+      .project-type {
+        margin-bottom: 0.38rem;
+        color: var(--text-sub);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .project-title {
+        font-size: clamp(1.55rem, 2.3vw, 2.15rem);
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+      .project-meta {
+        padding-bottom: 0.15rem;
+        color: var(--text-sub);
+        font-size: 0.78rem;
+        font-weight: 400;
+        text-align: right;
+      }
+      .project-description {
+        max-width: 650px;
+        margin-top: 0.55rem;
+        color: var(--text-sub);
+        font-size: 0.98rem;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+      .project-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .outcomes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+      .outcome {
+        padding: 0.38rem 0.55rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--text-sub);
+        font-size: 0.68rem;
+        font-weight: 600;
+      }
+      .project-cta {
+        color: var(--text-main);
+        font-size: 0.75rem;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .project:hover .project-cta {
+        color: var(--pink);
+      }
+      .project:hover .project-cta span {
+        display: inline-block;
+        transform: translateX(4px);
+      }
+
+      @media (max-width: 760px) {
+        body {
+          display: block;
+          height: auto;
+          overflow-y: auto;
+        }
+        .left {
+          width: 100%;
+          height: auto;
+          min-height: 430px;
+          padding: 2rem;
+          border-right: 0;
+          border-bottom: 1px solid var(--border);
+        }
+        nav {
+          margin-bottom: 2.5rem;
+        }
+        .intro {
+          min-height: 250px;
+          padding-bottom: 3.5rem;
+        }
+        .theme-switcher {
+          position: static;
+        }
+        .right {
+          height: auto;
+          padding: 1.5rem;
+        }
+        .gallery {
+          gap: 2.4rem;
+        }
+      }
+
+      @media (max-width: 560px) {
+        nav {
+          gap: 1rem;
+        }
+        .left {
+          min-height: 390px;
+        }
+        h1 {
+          font-size: 2.45rem;
+        }
+        .project-visual {
+          min-height: 260px;
+          aspect-ratio: auto;
+        }
+        .project-info {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 0.3rem;
+        }
+        .project-meta {
+          text-align: left;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="left">
+      <nav>
+        <a class="logo" href="/">🌸</a>
+        <a class="nav-link active" href="/case-studies/">Case Studies</a>
+        <a class="nav-link" href="/about.html">About</a>
+      </nav>
+      <div class="intro">
+        <p class="eyebrow">A few things I care about</p>
+        <h1>Making complicated work feel less complicated.</h1>
+        <p>
+          I design product systems, AI tools, trust experiences, and coded
+          experiments that turn messy workflows into clearer, more usable
+          products.
+        </p>
+      </div>
+      <button
+        class="theme-switcher"
+        type="button"
+        aria-label="Toggle color theme"
+      >
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+          />
+        </svg>
+      </button>
+    </aside>
+
+    <main class="right">
+      <section class="gallery" aria-label="Case studies">
+        <a class="project" href="/case-studies/events-os/">
+          <div class="project-visual">
+            <img
+              data-src="/public/case-studies/events-os/actual/dashboard.jpg"
+              alt="Events OS dashboard"
+            /><span class="fallback">Events OS</span>
+          </div>
+          <div class="project-info">
+            <div>
+              <p class="project-type">Product design</p>
+              <h2 class="project-title">Events OS</h2>
+            </div>
+          </div>
+          <p class="project-description">
+            An event operations workspace for planning, vendor coordination,
+            task tracking, reporting, and execution.
+          </p>
+        </a>
+        <a class="project" href="/case-studies/proofpage/">
+          <div class="project-visual">
+            <img
+              data-src="/public/case-studies/proofpage/actual/hero.jpg"
+              alt="ProofPage trust and verification experience"
+            /><span class="fallback">ProofPage</span>
+          </div>
+          <div class="project-info">
+            <div>
+              <p class="project-type">Product design</p>
+              <h2 class="project-title">ProofPage</h2>
+            </div>
+          </div>
+          <p class="project-description">
+            A trust and verification experience that helps buyers understand
+            vendor credibility, protection, and proof before making decisions.
+          </p>
+        </a>
+        <a class="project" href="/case-studies/klone/">
+          <div class="project-visual">
+            <img
+              data-src="/public/case-studies/klone/actual/customer-hero.jpg"
+              alt="Klone brand and product work"
+            /><span class="fallback">Klone</span>
+          </div>
+          <div class="project-info">
+            <div>
+              <p class="project-type">Brand and product</p>
+              <h2 class="project-title">Klone</h2>
+            </div>
+          </div>
+          <p class="project-description">
+            A brand and product direction built to make Klone sharper, more
+            recognizable, and consistent across product and marketing
+            touchpoints.
+          </p>
+        </a>
+        <a class="project" href="/case-studies/copylint/">
+          <div class="project-visual">
+            <img
+              data-src="/public/case-studies/copylint/actual/scan-ready.jpg"
+              alt="CopyLint scan file modal"
+            /><span class="fallback">CopyLint</span>
+          </div>
+          <div class="project-info">
+            <div>
+              <p class="project-type">Figma plugin</p>
+              <h2 class="project-title">CopyLint</h2>
+            </div>
+          </div>
+          <p class="project-description">
+            An AI-assisted copy review tool that catches inconsistent copy and
+            microcopy directly inside design files.
+          </p>
+        </a>
+        <a class="project" href="/case-studies/design-engineering-lab/">
+          <div class="project-visual">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Crane Flight gameplay"
+            >
+              <source
+                src="https://res.cloudinary.com/dgyadttyg/video/upload/v1777831700/craneflight_bix5jl.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="project-info">
+            <div>
+              <p class="project-type">Games and experiments</p>
+              <h2 class="project-title">Design engineering lab</h2>
+            </div>
+          </div>
+          <p class="project-description">
+            A full case study on playful coded experiments exploring games,
+            motion, feedback, interaction design, audio, and frontend craft.
+          </p>
+        </a>
+      </section>
+    </main>
+    <script>
+      const body = document.body;
+      const toggle = document.querySelector(".theme-switcher");
+      const primaryNav = document.querySelector("nav");
+      const sidebar = document.querySelector(".left");
+      const scrollPanel = document.querySelector(".right");
+
+      const responsiveThemePlacement = window.matchMedia(
+        "(max-width: 760px)",
+      );
+
+      function placeThemeToggle({ matches }) {
+        if (!toggle || !primaryNav || !sidebar) return;
+        (matches ? primaryNav : sidebar).append(toggle);
+      }
+
+      placeThemeToggle(responsiveThemePlacement);
+      responsiveThemePlacement.addEventListener("change", placeThemeToggle);
+
+      window.addEventListener(
+        "wheel",
+        (event) => {
+          if (
+            window.innerWidth <= 760 ||
+            !scrollPanel ||
+            event.target.closest(".right")
+          )
+            return;
+          scrollPanel.scrollTop += event.deltaY;
+        },
+        { passive: true },
+      );
+
+      if (localStorage.getItem("theme") === "light")
+        body.classList.add("light");
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("light");
+        localStorage.setItem(
+          "theme",
+          body.classList.contains("light") ? "light" : "dark",
+        );
+      });
+      document.querySelectorAll("img[data-src]").forEach((image) => {
+        const target = image.dataset.src;
+        fetch(target, { method: "HEAD" })
+          .then((response) => {
+            if (response.ok) image.src = target;
+            else image.classList.add("is-missing");
+          })
+          .catch(() => image.classList.add("is-missing"));
+      });
+      document
+        .querySelectorAll("img[src]")
+        .forEach((image) =>
+          image.addEventListener("error", () =>
+            image.classList.add("is-missing"),
+          ),
+        );
+    </script>
+  </body>
+</html>

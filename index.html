@@ -22,7 +22,7 @@
   <meta property="twitter:image" content="og-image.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico?v=5">
+  <link rel="icon" type="image/png" href="/favicon.png?v=6" />
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
@@ -312,6 +312,50 @@
       border-radius: 16px;
     }
 
+    .video-card {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .video-card .video-poster,
+    .video-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-card .video-poster {
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 400ms ease;
+    }
+
+    .video-card video {
+      z-index: 2;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 400ms ease;
+    }
+
+    .video-card.is-playing video {
+      opacity: 1;
+    }
+
+    .video-card.is-playing .video-poster {
+      opacity: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .video-card .video-poster,
+      .video-card video {
+        transition: none;
+      }
+    }
+
     .avatar-container {
       width: 100px;
       height: 100px;
@@ -390,11 +434,8 @@
       }
 
       .theme-switcher {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        margin-top: 1.5rem;
-        margin-bottom: 0;
+        position: static;
+        margin: 0;
         display: inline-flex;
       }
 
@@ -421,7 +462,7 @@
   <aside class="left">
     <nav>
       <a class="logo" href="#" id="logo-link">🌸</a>
-      <a class="nav-link" href="https://www.behance.net/estheromosehin" target="_blank">Case Studies</a>
+      <a class="nav-link" href="/case-studies/">Case Studies</a>
       <a class="nav-link" href="#" id="about-link">About</a>
     </nav>
 
@@ -464,7 +505,7 @@
       </div>
     </div>
 
-    <div class="theme-switcher" id="theme-toggle">
+    <button class="theme-switcher" id="theme-toggle" type="button" aria-label="Toggle color theme">
       <svg class="moon-icon" viewBox="0 0 24 24">
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
       </svg>
@@ -479,18 +520,20 @@
         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
       </svg>
-    </div>
+    </button>
   </aside>
 
   <main class="right" id="gallery-container">
     <div class="gallery" id="gallery-list">
-      <div class="project-card">
-        <video autoplay muted loop playsinline preload="auto" width="100%">
+      <div class="project-card video-card is-loading">
+        <img class="video-poster" src="/public/video-posters/crane-flight.jpg" alt="" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata" width="100%" poster="/public/video-posters/crane-flight.jpg" aria-label="Crane Flight game preview">
           <source src="https://res.cloudinary.com/dgyadttyg/video/upload/v1777831700/craneflight_bix5jl.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="project-card">
-        <video autoplay muted loop playsinline preload="auto" width="100%">
+      <div class="project-card video-card is-loading">
+        <img class="video-poster" src="/public/video-posters/mood-drum.jpg" alt="" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata" width="100%" poster="/public/video-posters/mood-drum.jpg" aria-label="Mood Drum interaction preview">
           <source
             src="https://res.cloudinary.com/dgyadttyg/video/upload/f_auto,q_auto/v1777741180/highendmooddrumrecording_eznbba.mp4"
             type="video/mp4">
@@ -503,23 +546,26 @@
       <div class="project-card"><img src="escalations.jpeg" alt="Escalation Workflow"></div>
       <div class="project-card"><img src="testimonials.jpeg" alt="Customer Success Case"></div>
       <div class="project-card"><img src="add_deets.jpeg" alt="User Details Form Design"></div>
-      <div class="project-card">
-        <video autoplay muted loop playsinline preload="none" width="100%">
+      <div class="project-card video-card is-loading">
+        <img class="video-poster" src="/public/video-posters/iso-keys.jpg" alt="" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata" width="100%" poster="/public/video-posters/iso-keys.jpg" aria-label="Iso Keys music interaction preview">
           <source src="https://res.cloudinary.com/dgyadttyg/video/upload/f_auto,q_auto/v1777741567/isokeys_yvuohv.mp4"
             type="video/mp4">
         </video>
       </div>
       <div class="project-card"><img src="dark_ai_chat.png" alt="AI Chat Interface"></div>
       <div class="project-card"><img src="auth_mockup.png" alt="Authentication Flow"></div>
-      <div class="project-card">
-        <video autoplay muted loop playsinline preload="none" width="100%">
+      <div class="project-card video-card is-loading">
+        <img class="video-poster" src="/public/video-posters/paper-pop.jpg" alt="" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata" width="100%" poster="/public/video-posters/paper-pop.jpg" aria-label="Paper Pop game preview">
           <source src="https://res.cloudinary.com/dgyadttyg/video/upload/f_auto,q_auto/v1777741038/popvideo_rjkirk.mp4"
             type="video/mp4">
         </video>
       </div>
       <div class="project-card"><img src="fintech_new.png" alt="Advanced Fintech Design"></div>
-      <div class="project-card">
-        <video autoplay muted loop playsinline preload="none" width="100%">
+      <div class="project-card video-card is-loading">
+        <img class="video-poster" src="/public/video-posters/type-rift.jpg" alt="" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata" width="100%" poster="/public/video-posters/type-rift.jpg" aria-label="Type Rift game preview">
           <source src="https://res.cloudinary.com/dgyadttyg/video/upload/f_auto,q_auto/v1777740991/typerift_jeiicn.mp4"
             type="video/mp4">
         </video>
@@ -561,12 +607,23 @@
     // THEME & SPA LOGIC
     const body = document.body;
     const themeToggle = document.getElementById('theme-toggle');
+    const primaryNav = document.querySelector('nav');
+    const sidebar = document.querySelector('.left');
     const container = document.getElementById('gallery-container');
     const list = document.getElementById('gallery-list');
     const logoLink = document.getElementById('logo-link');
     const aboutLink = document.getElementById('about-link');
     const homeContent = document.getElementById('home-content');
     const aboutContent = document.getElementById('about-content');
+    const responsiveThemePlacement = window.matchMedia('(max-width: 1100px)');
+
+    function placeThemeToggle({ matches }) {
+      if (!themeToggle || !primaryNav || !sidebar) return;
+      (matches ? primaryNav : sidebar).append(themeToggle);
+    }
+
+    placeThemeToggle(responsiveThemePlacement);
+    responsiveThemePlacement.addEventListener('change', placeThemeToggle);
 
     // SPA Navigation
     function showHome() {
@@ -597,6 +654,55 @@
     const clone = list.cloneNode(true);
     clone.removeAttribute('id');
     container.appendChild(clone);
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function setupVideoCard(card) {
+      const video = card.querySelector('video');
+      if (!video) return;
+
+      card.classList.add('is-loading');
+      card.classList.remove('is-playing');
+      video.controls = false;
+
+      if (reducedMotion.matches) {
+        video.removeAttribute('autoplay');
+        video.pause();
+      }
+
+      let readyHandled = false;
+
+      function handleReady() {
+        if (readyHandled) return;
+        readyHandled = true;
+        card.classList.remove('is-loading');
+
+        if (reducedMotion.matches) {
+          video.pause();
+          return;
+        }
+
+        const playAttempt = video.play();
+        if (playAttempt && typeof playAttempt.then === 'function') {
+          playAttempt
+            .then(() => card.classList.add('is-playing'))
+            .catch(() => card.classList.remove('is-playing'));
+          return;
+        }
+
+        card.classList.add('is-playing');
+      }
+
+      video.addEventListener('loadeddata', handleReady, { once: true });
+      video.addEventListener('canplay', handleReady, { once: true });
+
+      if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+        handleReady();
+      }
+    }
+
+    document.querySelectorAll('.video-card').forEach(setupVideoCard);
+
     container.addEventListener('scroll', () => {
       if (container.scrollTop >= list.offsetHeight) container.scrollTop = 1;
       else if (container.scrollTop <= 0) container.scrollTop = list.offsetHeight - 1;

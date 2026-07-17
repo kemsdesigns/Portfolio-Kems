@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Design engineering lab | Kems Designs</title>
+    <link rel="icon" type="image/png" href="/favicon.png?v=6" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/case-studies/events-os/events-detail.css?v=21"
+    />
+  </head>
+  <body class="design-lab">
+    <aside class="left">
+      <nav>
+        <a class="logo" href="/">🌸</a
+        ><a class="nav-link active" href="/case-studies/">Case Studies</a
+        ><a class="nav-link" href="/about.html">About</a>
+      </nav>
+      <section class="overview">
+        <p class="eyebrow">Design engineering · 2024–2026</p>
+        <h1>Design engineering lab</h1>
+        <p class="overview-summary">
+          Playable browser projects built solo across concept, visual design,
+          sound design, and front-end engineering.
+        </p>
+        <dl class="project-facts">
+          <div>
+            <dt>Role</dt>
+            <dd>Designer and Builder</dd>
+          </div>
+          <div>
+            <dt>Format</dt>
+            <dd>Playable web experiments</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>HTML, CSS, JavaScript, Web Audio</dd>
+          </div>
+        </dl>
+      </section>
+      <button
+        class="theme-switcher"
+        data-theme-toggle
+        aria-label="Toggle theme"
+      >
+        <svg class="moon-icon" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg
+        ><svg class="sun-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+          />
+        </svg>
+      </button>
+    </aside>
+    <main class="right">
+      <article class="lab-story">
+        <header class="lab-hero">
+          <p class="story-label">Project snapshot</p>
+          <h2>Five playable projects, one visual language each.</h2>
+          <p>
+            A collection of browser-based games built solo, end to end. Each
+            ships as a self-contained experience with its own aesthetic,
+            mechanic, and sound built with the Web Audio API: Crane Flight,
+            Voidbreak, Type Rift, Spin the Wheel, and Paper Pop.
+          </p>
+        </header>
+        <section class="story-section">
+          <p class="story-label">The reality</p>
+          <h2>
+            Static screens cannot prove that an interaction actually works.
+          </h2>
+          <p>
+            They cannot show how something feels to play, whether the timing is
+            right, or whether the feedback loop is satisfying. Games are one of
+            the few formats where design and engineering cannot be faked
+            separately. If the physics are off, the game feels bad no matter how
+            it looks. If the visual design is thin, solid engineering does not
+            save it.
+          </p>
+          <p class="callout">
+            I built this collection to have proof of both, in a format where
+            there is nowhere to hide.
+          </p>
+        </section>
+        <section class="story-section">
+          <p class="story-label">The design challenge</p>
+          <h2>
+            Build several small, complete experiences instead of one large one.
+          </h2>
+          <p>
+            Each project needed a genuinely different visual identity so the
+            range itself became the point. Reusing one template across five
+            games would say much less than five distinct aesthetics solving five
+            distinct interaction problems.
+          </p>
+        </section>
+        <section class="story-section">
+          <p class="story-label">Key decision 01</p>
+          <h2>One visual identity per game, not one shared template.</h2>
+          <p>
+            Each game has its own color language, typography choices, and visual
+            world. Crane Flight reframes a Flappy Bird style mechanic around a
+            paper crane, so the physics needed to feel light rather than
+            mechanical. Voidbreak takes brick breaker into a darker, atmospheric
+            space. Type Rift and Paper Pop use pacing and feedback suited to
+            their specific mechanics.
+          </p>
+          <p class="callout">
+            Five different visual worlds prove design versatility more clearly
+            than one polished template repeated five times.
+          </p>
+        </section>
+        <section class="story-section">
+          <p class="story-label">Key decision 02</p>
+          <h2>Sound became a first-class design layer.</h2>
+          <p>
+            Every game has audio built with the Web Audio API and tuned to its
+            own feel rather than added as generic sound effects. A hit, a miss,
+            and a win state are interaction feedback. Treating sound that way
+            from the start made it part of the mechanic, not decoration added
+            after the build was finished.
+          </p>
+        </section>
+        <section class="story-section">
+          <p class="story-label">Key decision 03</p>
+          <h2>Each experience was engineered and shipped solo.</h2>
+          <p>
+            There is no design handoff here. Each game is self-contained, with
+            its own logic, rendering, and input handling. Type Rift required
+            responsive real-time input. Spin the Wheel paired randomization
+            logic with animation easing that needed to read as fair and
+            satisfying rather than mechanical.
+          </p>
+        </section>
+        <h2 class="experiments-heading">Selected experiments</h2>
+        <section class="experiment">
+          <div class="experiment-media">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source
+                src="https://res.cloudinary.com/dgyadttyg/video/upload/v1777831700/craneflight_bix5jl.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="experiment-copy">
+            <p class="story-label">Game experiment</p>
+            <h3>A paper crane, a narrow gap, and one more try.</h3>
+            <p>
+              A game-loop exercise in timing and physics. I focused on simple
+              mechanics, clear feedback, and the small feeling that makes
+              someone want to try again.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://kemsdesigns.github.io/crane-flight/"
+                target="_blank"
+                rel="noreferrer"
+                >Play live →</a
+              ><a
+                href="https://github.com/kemsdesigns/crane-flight"
+                target="_blank"
+                rel="noreferrer"
+                >View code →</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="experiment">
+          <div class="experiment-media">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source
+                src="https://res.cloudinary.com/dgyadttyg/video/upload/f_auto,q_auto/v1777741180/highendmooddrumrecording_eznbba.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="experiment-copy">
+            <p class="story-label">Music interaction</p>
+            <h3>A drum machine designed as an instrument.</h3>
+            <p>
+              Sound, timing, colour, and visual feedback were designed as one
+              response system, making a small tool feel physical instead of like
+              a settings panel.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://mood-drum.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                >Play live →</a
+              ><a
+                href="https://github.com/kemsdesigns/mood-drum"
+                target="_blank"
+                rel="noreferrer"
+                >View code →</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="experiment">
+          <div class="experiment-media">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source
+                src="https://res.cloudinary.com/dgyadttyg/video/upload/f_auto,q_auto/v1777741567/isokeys_yvuohv.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="experiment-copy">
+            <p class="story-label">Music interaction</p>
+            <h3>Iso Keys, a deliberately simple surface for sound.</h3>
+            <p>
+              Iso Keys explores how much character can come from a small
+              interaction model: layout, visual rhythm, and the relationship
+              between a press and a sound.
+            </p>
+          </div>
+        </section>
+        <section class="experiment">
+          <div class="experiment-media music-shot">
+            <img
+              src="/public/case-studies/design-engineering-lab/music-player.png"
+              alt="Music Player live experience"
+            />
+          </div>
+          <div class="experiment-copy">
+            <p class="story-label">Product experiment</p>
+            <h3>A music experience where the interface carries the mood.</h3>
+            <p>
+              A live music product exploring how visual direction, playback
+              moments, and browsing flow can create atmosphere without getting
+              in the way of the music.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://music-player-khaki-nu-87.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                >Open live experience →</a
+              ><a
+                href="https://github.com/kemsdesigns/music-player"
+                target="_blank"
+                rel="noreferrer"
+                >View code →</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="experiment">
+          <div class="experiment-media">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source
+                src="https://res.cloudinary.com/dgyadttyg/video/upload/f_auto,q_auto/v1777741038/popvideo_rjkirk.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="experiment-copy">
+            <p class="story-label">Game experiment</p>
+            <h3>A short loop built around the pleasure of a clean pop.</h3>
+            <p>
+              Paper Pop is about quick response, clear targets, and sound that
+              makes repetition feel rewarding instead of mechanical.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://whack-a-mole-bay.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                >Play live →</a
+              ><a
+                href="https://github.com/kemsdesigns/whack-a-mole"
+                target="_blank"
+                rel="noreferrer"
+                >View code →</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="experiment">
+          <div class="experiment-media">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source
+                src="https://res.cloudinary.com/dgyadttyg/video/upload/f_auto,q_auto/v1777740991/typerift_jeiicn.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="experiment-copy">
+            <p class="story-label">Game experiment</p>
+            <h3>
+              Typing becomes a timing game when every word has consequences.
+            </h3>
+            <p>
+              Type Rift combines real-time input, pressure, and pacing to turn a
+              familiar action into a game.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://typerift-six.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                >Play live →</a
+              ><a
+                href="https://github.com/kemsdesigns/typerift"
+                target="_blank"
+                rel="noreferrer"
+                >View code →</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="story-section">
+          <p class="story-label">The point</p>
+          <h2>Can an idea become a working, playable thing?</h2>
+          <p>
+            This collection answers that question repeatedly, across different
+            mechanics and visual problems. Five games answering it five
+            different ways is a stronger proof point than one large project
+            answering it once.
+          </p>
+        </section>
+        <section class="story-section">
+          <p class="story-label">Reflection</p>
+          <h2>Variety was the most useful constraint.</h2>
+          <p>
+            Building genuinely different experiences rather than reskins of one
+            underlying game forced range in visual design, interaction design,
+            and front-end engineering that a single larger project would not
+            have required in the same way.
+          </p>
+        </section>
+      </article>
+      <a class="next-project next-preview" href="/case-studies/events-os/"
+        ><img
+          src="/public/case-studies/events-os/actual/dashboard.jpg"
+          alt="Events OS preview"
+        />
+        <div>
+          <span>Product design · 2024 – Present</span><strong>Events OS</strong>
+          <p>
+            A planning deck for hotels and venues, bringing layout, RSVP, menus,
+            sequencing, and team collaboration into one shared system.
+          </p>
+        </div></a
+      >
+    </main>
+    <script src="/case-studies/case-study.js?v=11"></script>
+  </body>
+</html>

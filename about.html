@@ -17,7 +17,7 @@
   <meta name="twitter:description" content="Designing products people actually use and businesses grow from.">
   <meta name="twitter:image" content="og-image.png">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico?v=5">
+  <link rel="icon" type="image/png" href="/favicon.png?v=6" />
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
@@ -385,11 +385,8 @@
       }
 
       .theme-switcher {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        margin-top: 1.5rem;
-        margin-bottom: 0;
+        position: static;
+        margin: 0;
         display: inline-flex;
       }
 
@@ -416,7 +413,7 @@
   <aside class="left">
     <nav>
       <a class="logo" href="index.html" id="logo-link">🌸</a>
-      <a class="nav-link" href="https://www.behance.net/estheromosehin" target="_blank">Case Studies</a>
+      <a class="nav-link" href="/case-studies/">Case Studies</a>
       <a class="nav-link active" href="about.html" id="about-link">About</a>
     </nav>
 
@@ -459,7 +456,7 @@
       </div>
     </div>
 
-    <div class="theme-switcher" id="theme-toggle">
+    <button class="theme-switcher" id="theme-toggle" type="button" aria-label="Toggle color theme">
       <svg class="moon-icon" viewBox="0 0 24 24">
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
       </svg>
@@ -474,7 +471,7 @@
         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
       </svg>
-    </div>
+    </button>
   </aside>
 
   <main class="right" id="gallery-container">
@@ -556,12 +553,23 @@
     // THEME & SPA LOGIC
     const body = document.body;
     const themeToggle = document.getElementById('theme-toggle');
+    const primaryNav = document.querySelector('nav');
+    const sidebar = document.querySelector('.left');
     const container = document.getElementById('gallery-container');
     const list = document.getElementById('gallery-list');
     const logoLink = document.getElementById('logo-link');
     const aboutLink = document.getElementById('about-link');
     const homeContent = document.getElementById('home-content');
     const aboutContent = document.getElementById('about-content');
+    const responsiveThemePlacement = window.matchMedia('(max-width: 1100px)');
+
+    function placeThemeToggle({ matches }) {
+      if (!themeToggle || !primaryNav || !sidebar) return;
+      (matches ? primaryNav : sidebar).append(themeToggle);
+    }
+
+    placeThemeToggle(responsiveThemePlacement);
+    responsiveThemePlacement.addEventListener('change', placeThemeToggle);
 
     // SPA Navigation
     function showHome() {
